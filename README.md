@@ -1,36 +1,79 @@
 # Linux Privilege Escalation Automation Toolkit
 
-CLI-only automated Linux security auditing toolkit matching the project specification.
+A CLI-based Linux security auditing tool that automatically scans for potential privilege-escalation weaknesses and generates a security report.
 
-## Objective
-Develop a fully automated scanner for privilege escalation weaknesses.
+## Features
 
-## Modules
-1. System Information Collection
-2. SUID/SGID Binary Discovery
-3. Weak File & Directory Permissions
-4. Misconfigured Services
-5. Sudo Configuration Review
-6. Cron Vulnerability Review
-7. Kernel/CVE Candidate Detection
-8. Risk Analysis
-9. Markdown + JSON Reporting
+* System information collection
+* SUID/SGID binary discovery
+* Weak file and directory permission checks
+* Misconfigured service detection
+* Sudo configuration review
+* Cron job analysis
+* Kernel and CVE candidate review
+* Risk classification
+* Markdown and JSON report generation
 
-## Safety
-Detection, analysis and reporting only. The toolkit does not exploit vulnerabilities, modify permissions, alter sudoers, replace cron jobs, execute payloads, or attempt privilege escalation.
+## Technologies
 
-## Run on Linux
+* Python 3
+* Bash
+* Linux
+
+## Requirements
+
+* Linux system
+* Python 3.9+
+* Standard Linux utilities such as `find`, `systemctl`, `sudo`, and `crontab`
+
+No external Python packages are required.
+
+## Installation
+
+```bash
+git clone https://github.com/YOUR-USERNAME/Linux-Privilege-Escalation-Automation-Toolkit.git
+cd Linux-Privilege-Escalation-Automation-Toolkit
+```
+
+Make the script executable:
+
 ```bash
 chmod +x run_toolkit.sh
+```
+
+## Usage
+
+Run the toolkit:
+
+```bash
 ./run_toolkit.sh
 ```
+
 Or:
+
 ```bash
 python3 toolkit.py
 ```
-Reports are written to `reports/`.
 
-## Requirements
-Linux and Python 3.9+. No third-party Python packages are required. Some modules depend on standard Linux utilities such as `find`, `systemctl`, `sudo`, and `crontab` and safely report when they are unavailable.
+Reports are automatically saved in the `reports/` directory.
 
-Use only on systems you own or are authorized to audit.
+## Project Structure
+
+```text
+├── toolkit.py
+├── run_toolkit.sh
+├── requirements.txt
+├── README.md
+├── docs/
+└── reports/
+```
+
+## Safety
+
+This project is **detection and reporting only**. It does not perform privilege-escalation exploits or modify system configuration.
+
+Use the toolkit only on systems you own or are authorized to audit.
+
+## Purpose
+
+This project was developed for cybersecurity education and Linux security auditing, demonstrating automated enumeration, risk analysis, and security reporting.
